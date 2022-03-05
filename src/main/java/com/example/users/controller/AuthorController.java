@@ -8,7 +8,7 @@ import java.util.ArrayList;
 @RestController
 public class AuthorController {
 
-    ArrayList<Author> authorList = new ArrayList();
+    ArrayList<Author> authorList = new ArrayList<>();
 
     @GetMapping("author")
     public ArrayList<Author> getAuthor(){
