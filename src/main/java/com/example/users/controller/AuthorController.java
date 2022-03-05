@@ -22,14 +22,14 @@ public class AuthorController {
         return authorList;
     }
 
-    @PutMapping("author")
+    @PutMapping("author/{id}")
     public ArrayList<Author> putAuthor(@PathVariable int index, @RequestBody Author author){
         System.out.println("done PUT");
         authorList.set(index, author);
         return authorList;
     }
 
-    @DeleteMapping("author")
+    @DeleteMapping("author/{id}")
     public ArrayList<Author> deleteAuthor(@PathVariable int index){
         System.out.println("done DELETE");
         authorList.remove(index);
