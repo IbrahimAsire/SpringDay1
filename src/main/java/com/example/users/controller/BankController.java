@@ -60,10 +60,10 @@ public class BankController {
 
     @PostMapping("account/withdraw/{id}")
     public ArrayList<BankAccount> withdraw(@PathVariable String id, @RequestBody Double amount){
-        for (int i = 0; i < accountsList.size(); i++) {
-            if(accountsList.get(i).getId().equals(id)){
-                Double oldBalance=accountsList.get(i).getBalance();
-                accountsList.get(i).setBalance(oldBalance-amount);
+        for (BankAccount bankAccount : accountsList) { //this is enhanced 'for', same the above
+            if (bankAccount.getId().equals(id)) {
+                Double oldBalance = bankAccount.getBalance();
+                bankAccount.setBalance(oldBalance - amount);
                 break;
             }
         }
