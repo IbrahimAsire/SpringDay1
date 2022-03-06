@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
 @RestController
+@RequestMapping("api/v1/")
 public class BookController {
 
     ArrayList<Book> books = new ArrayList<>();
@@ -21,14 +22,14 @@ public class BookController {
         return books;
     }
 
-    @PutMapping("book/{id}")
-    public ArrayList<Book> putBook(@PathVariable int index, @RequestBody Book book){
+    @PutMapping("book/{index}")
+    public ArrayList<Book> updateBook(@PathVariable Integer index, @RequestBody Book book){
         books.set(index, book);
         return  books;
     }
 
-    @DeleteMapping("book/{id}")
-    public ArrayList<Book> deleteBook(@PathVariable int index){
+    @DeleteMapping("book/{index}")
+    public ArrayList<Book> deleteBook(@PathVariable Integer index){
         books.remove(index);
         return books;
     }

@@ -24,16 +24,16 @@ public class UserController {
 
 
     @PutMapping("user/{id}")
-    public ArrayList<MyUser> updateUser(@PathVariable int index, @RequestBody MyUser user){
-        usersList.set(index,user);
+    public ArrayList<MyUser> updateUser(@PathVariable int id, @RequestBody MyUser user){
+        usersList.set(id,user);
         return usersList;
     }
 
 
     @DeleteMapping("user/{id}")
-    public ArrayList<MyUser> deleteUser(@PathVariable int index){
+    public ArrayList<MyUser> deleteUser(@PathVariable int id){
         System.out.println("done D");
-        usersList.remove(index);
+        usersList.remove(id);
         return usersList;
     }
 
